@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Percentage-Calculator</title>
+     <link rel="stylesheet" href="./style.css">
+     <link rel="icon" href="./aman.jpeg">
+</head>
+<body>
+     <div>
+          <button class="continue-application">
+               <div>
+                   <div class="pencil"></div>
+                   <div class="folder">
+                       <div class="top">
+                           <svg viewBox="0 0 24 27">
+                               <path d="M1,0 L23,0 C23.5522847,-1.01453063e-16 24,0.44771525 24,1 L24,8.17157288 C24,8.70200585 23.7892863,9.21071368 23.4142136,9.58578644 L20.5857864,12.4142136 C20.2107137,12.7892863 20,13.2979941 20,13.8284271 L20,26 C20,26.5522847 19.5522847,27 19,27 L1,27 C0.44771525,27 6.76353751e-17,26.5522847 0,26 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 Z"></path>
+                           </svg>
+                       </div>
+                       <div class="paper"></div>
+                   </div>
+               </div>
+               <a style="color: white;" href="https://resume-aman.vercel.app/">My Resume</a>
+           </button> 
+           <br>
+           <br>
+           <br>
+          <br>
+          <br>
+     <div class="div1"> 
+          <div class="input-group">
+               <label class="label">English</label>
+               <input autocomplete="off" name="Email" id="en" class="input" type="number">
+               <label class="label">Hindi</label>
+               <input autocomplete="off" name="Email" id="hi" class="input" type="number">
+               <label class="label">Chemisty</label>
+               <input autocomplete="off" name="Email" id="ch" class="input" type="number">
+               <label class="label">Physics</label>
+               <input autocomplete="off" name="Email" id="py" class="input" type="number">
+               <label class="label">Maths</label>
+               <input autocomplete="off" name="Email" id="ma" class="input" type="number">
+          </div> 
+     </div>
+     <br>
+     <br>
+     <div class="div1">
+     <button onclick="calcy()">Check Total</button>
+     </div>
+     <br>
+     <br>
+     <div style="text-align: center;">
+          <button style="align-items: center;" id="showdata"></button>
+          
+     </div>
+     </div>
+     <script>
+          const calcy = ()=> {
+         let en = document.getElementById('en').value;
+         let hi = document.getElementById('hi').value;
+         let ch = document.getElementById('ch').value;
+         let py = document.getElementById('py').value;
+         let ma= document.getElementById('ma').value;
+let totalgrade = parseFloat(en)+parseFloat(hi)+parseFloat(ch)+parseFloat(py)+parseFloat(ma);
+let percentage = (totalgrade/500)*100;
+
+
+if (percentage <= 100 && percentage >= 80) {
+     grades = 'A';
+}
+else if (percentage <= 79 && percentage >= 60) {
+     grades = 'B';
+}
+else if (percentage <= 59 && percentage >= 40) {
+     grades = 'C';
+}
+else {
+     grades = 'Fail';
+}
+
+
+if (percentage >= 33) {
+     document.getElementById('showdata').innerHTML= `  500/${totalgrade} <br>
+ Percentage is ${percentage}% <br>  Grade is ${grades}.<br> Congratulations You are pass.`
+}
+else {
+     document.getElementById('showdata').innerHTML= `500/${totalgrade} <br>
+ Percentage is ${percentage}% <br> Grade is ${grades}.<br> Sorry you are fail.`
+}
+          }
+     </script>
+</body>
+</html>
